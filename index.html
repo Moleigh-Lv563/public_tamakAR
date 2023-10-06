@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<!--information-->
+<head prefix="og:http://ogp.me/ns#">
+  <!--webSetting-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>AR_Study</title>
+  <meta name="description" content="都立多摩科学技術高校の学校案内支援webアプリ。ARで学校選びに更なる楽しみを">
+  <meta name="keyword" content="多摩科学技術,AR,学校案内">
+  <meta name="author" content="Moleigh-Lv563">
+  <!--ogpSetting-->
+  <meta property="og:title" content="tamakAR(たまかる) | 学校案内WebARアプリ">
+  <meta property="og:type" content="product">
+  <meta property="og:description" content="都立多摩科学技術高校の学校案内支援webアプリ。ARで学校選びに更なる楽しみを">
+  <meta property="og:url" content="https://moleigh-lv563.github.io/tamakAR/">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="学校案内WebARアプリ">
+  <!--stylesheets-->
+  <script src="./_common/aframe.min.js"></script>
+  <script src="./_common/mindar-image-aframe.prod.js"></script>
+</head>
+<body>
+  <a-scene mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/card-example/card.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-assets>
+      <img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/card-example/card.png" />
+      <a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+    <a-entity mindar-image-target="targetIndex: 0">
+      <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+      <a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel" animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
+    </a-entity>
+  </a-scene>
+</body>
+</html>
